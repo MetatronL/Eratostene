@@ -37,7 +37,7 @@ function _clicked(){
 			document.getElementById("status").innerHTML = "NU ati introdus o valoare valida!" ;
 		else
 		document.getElementById("status").innerHTML = "" ;
-		document.getElementById("lista_finala").innerHTML= " <p id='__lista_finala' > </p>"
+		document.getElementById("lista_finala").innerHTML = " <div id='__lista_finala' >&nbsp</div>"
 		document.getElementById("numbers_container").innerHTML = "<p id='i_' ></p>";
 		createEratosteneList(n);
 		var lst = new Array(n+2);
@@ -53,9 +53,12 @@ function _clicked(){
 		}
 		var __this = document.getElementById("__lista_finala");
 		//__this.after("");
-		for(var i=n;i>=2;--i)
+		for(var i=2;i<=n;++i)
 			if( lst[i] )
-				$(__this).after(i+" ");
+			{
+				document.getElementById("lista_finala").innerHTML += i + ' ' ;
+				
+			}
 			/*else if(true) document.getElementById("dv_"+i).innerHTML = ""; */
 				
 }
