@@ -51,9 +51,22 @@ function __generateNumbers(n){
 			list[j] = 0;
 		}
 	}
-	for(i=2;i<=n;++i)
-		if( list[i] || non_prime_display )
-			_nrContainer.container.push(i);
+	if( !non_prime_display )
+	{
+		for(i=2;i<=n;++i)
+			if( list[i] )
+				_nrContainer.container.push(i),
+				document.getElementById("__lista_finala").innerHTML += i + ' ';
+	}
+	else
+	{
+		for(i=2;i<=n;++i)
+			if( list[i] )
+				_nrContainer.container.push(i),
+				document.getElementById("__lista_finala").innerHTML += i + ' ';
+			else 
+				_nrContainer.container.push(i)
+	}
 	_nrContainer.len = _nrContainer.container.length;
 	
 }
@@ -74,4 +87,23 @@ function __clicked_()
 	
 	__displayElement();
 	
+	
+}
+function btn_non_prime(_this)
+{	
+	if(non_prime_display)
+		$(_this).text("NU"),
+		non_prime_display = 0;
+	else 
+		$(_this).text("DA"),
+		non_prime_display = 1;
+	
+}
+
+
+function w3_open() {
+    document.getElementsByClassName("w3-sidenav")[0].style.display = "block";
+}
+function w3_close() {
+    document.getElementsByClassName("w3-sidenav")[0].style.display = "none";
 }
