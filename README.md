@@ -1,2 +1,2 @@
 # Eratostene
-http://htmlpreview.github.io/?https://github.com/MetatronL/Eratostene/blob/master/main.html
+http://metatronl.github.io/Eratostene/main.html
